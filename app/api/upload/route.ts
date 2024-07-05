@@ -2,14 +2,15 @@ import { PDFLoader } from "@langchain/community/document_loaders/fs/pdf";
 import { CharacterTextSplitter } from "@langchain/textsplitters";
 import { OpenAIEmbeddings } from "@langchain/openai";
 import { MongoDBAtlasVectorSearch } from "@langchain/mongodb";
-import { collection } from "@/app/databases";
+import { client } from "@/app/databases";
 
 // This function can run for a maximum of 30 seconds
-export const maxDuration = 60
+export const maxDuration = 60;
 // Creating vector index in mongo atlas on pdf uplaod
 export async function POST(req: any) {
   try {
     // First clear previous data from  mongodb
+    const collection: any = client.db("pdfsearch").collection("data");
     await collection.deleteMany({});
 
     // Loading pdf from request

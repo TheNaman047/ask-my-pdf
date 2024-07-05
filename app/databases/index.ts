@@ -17,4 +17,4 @@ const vectorStore = new MongoDBAtlasVectorSearch(embeddings, {
   embeddingKey: "embedding", // The name of the collection field containing the embedded text. Defaults to "embedding"
 });
 
-export { vectorStore, collection };
+export { vectorStore, client };
