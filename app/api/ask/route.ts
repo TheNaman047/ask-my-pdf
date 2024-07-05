@@ -3,7 +3,7 @@ import { HumanMessage } from "@langchain/core/messages";
 import { ChatOpenAI } from "@langchain/openai";
 
 // This function can run for a maximum of 30 seconds
-export const maxDuration = 30
+export const maxDuration = 60
 // Handling User questions
 export async function POST(req: any) {
   try {

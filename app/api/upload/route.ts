@@ -5,7 +5,7 @@ import { MongoDBAtlasVectorSearch } from "@langchain/mongodb";
 import { collection } from "@/app/databases";
 
 // This function can run for a maximum of 30 seconds
-export const maxDuration = 30
+export const maxDuration = 60
 // Creating vector index in mongo atlas on pdf uplaod
 export async function POST(req: any) {
   try {
