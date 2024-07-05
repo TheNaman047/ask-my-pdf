@@ -4,6 +4,10 @@ import { OpenAIEmbeddings } from "@langchain/openai";
 import { MongoDBAtlasVectorSearch } from "@langchain/mongodb";
 import { collection } from "@/app/databases";
 
+// This function can run for a maximum of 30 seconds
+export const config = {
+  maxDuration: 30,
+};
 // Creating vector index in mongo atlas on pdf uplaod
 export async function POST(req: any) {
   try {
