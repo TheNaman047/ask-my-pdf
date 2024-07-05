@@ -58,6 +58,7 @@ export async function POST(req: any) {
       model: "gpt-3.5-turbo-0125",
       maxTokens: 1024,
       apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
+      temperature: 0.1,
     }).bind({
       response_format: {
         type: "json_object",
